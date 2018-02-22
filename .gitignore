@@ -1,0 +1,5 @@
+*.exe
+
+[Dd]ebug/
+[Ww]in32/
+__history/

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2018/02/22 17:23:49.926,=C:\ARQUIVOZ\Base de Conhecimento\Delphi\Projetos\Unit1.pas</Transaction>
+    <Transaction>2018/02/22 17:28:05.810,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBAppPrincipal.pas=C:\ARQUIVOZ\Base de Conhecimento\Delphi\Projetos\Unit1.pas</Transaction>
+    <Transaction>2018/02/22 17:28:05.810,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBAppPrincipal.dfm=C:\ARQUIVOZ\Base de Conhecimento\Delphi\Projetos\Unit1.dfm</Transaction>
+    <Transaction>2018/02/22 17:28:22.655,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBApp.dproj=C:\ARQUIVOZ\Base de Conhecimento\Delphi\Projetos\Project1.dproj</Transaction>
+    <Transaction>2018/02/22 17:37:59.804,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBApp.dproj=C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBApp.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
