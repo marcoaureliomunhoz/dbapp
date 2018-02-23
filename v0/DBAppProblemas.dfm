@@ -22,6 +22,7 @@ object FormProblemas: TFormProblemas
     Align = alClient
     BorderStyle = bsNone
     DataSource = DataSourceProblemas
+    Options = [dgEditing, dgColumnResize, dgColLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ReadOnly = True
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET

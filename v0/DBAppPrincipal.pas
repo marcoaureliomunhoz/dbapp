@@ -23,6 +23,7 @@ type
     procedure PopupMenuItemAlterarProjetoClick(Sender: TObject);
     procedure ListboxProjetosMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure PopupMenuItemExcluirProjetoClick(Sender: TObject);
+    procedure ListboxProjetosClick(Sender: TObject);
   private
     ListaProjetos : TArray<TDBAppProjetoRec>;
     ConfigArq : TDBAppConfigArq;
@@ -37,6 +38,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses DBAppFormProjeto;
 
 procedure TFormPrincipal.BtnNovoClick(Sender: TObject);
 var
@@ -73,6 +76,22 @@ end;
 procedure TFormPrincipal.FormCreate(Sender: TObject);
 begin
    CarregarProjetos;
+end;
+
+procedure TFormPrincipal.ListboxProjetosClick(Sender: TObject);
+begin
+   if (ListboxProjetos.Count > 0) and (ListboxProjetos.ItemIndex >= 0) then
+   begin
+      Application.CreateForm(TFormProjeto, FormProjeto);
+      if FormProjeto.CarregarProjeto(ConfigArq.DiretorioDeProjetos, ListaProjetos[ListboxProjetos.ItemIndex].Nome) then
+      begin
+         FormProjeto.ShowModal;
+      end else
+      begin
+         ShowMessage('Ops!');
+      end;
+      FormProjeto.Free;
+   end;
 end;
 
 procedure TFormPrincipal.ListboxProjetosMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);

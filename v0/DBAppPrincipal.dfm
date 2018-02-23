@@ -953,6 +953,7 @@ object FormPrincipal: TFormPrincipal
     ItemHeight = 18
     PopupMenu = PopupMenuProjetos
     TabOrder = 0
+    OnClick = ListboxProjetosClick
     OnMouseDown = ListboxProjetosMouseDown
   end
   object BtnNovo: TButton

@@ -8,7 +8,9 @@ uses
   DBAppConfigArq in 'DBAppConfigArq.pas',
   DBAppBaseArq in 'DBAppBaseArq.pas',
   DBAppProblemas in 'DBAppProblemas.pas' {FormProblemas},
-  DBAppProjetosArq in 'DBAppProjetosArq.pas';
+  DBAppProjetosArq in 'DBAppProjetosArq.pas',
+  DBAppFormProjeto in 'DBAppFormProjeto.pas' {FormProjeto},
+  DBAppProjetoBase in 'DBAppProjetoBase.pas';
 
 {$R *.res}
 

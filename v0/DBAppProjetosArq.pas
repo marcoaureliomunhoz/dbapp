@@ -60,7 +60,6 @@ end;
 function TDBAppProjetosArq.GerarXml: string;
 var
    i : integer;
-   Projeto : TDBAppProjetoRec;
 begin
    result :=
       '<dbapp_projetos>';
@@ -131,8 +130,10 @@ begin
          try
             aux := NodeListProjetos[i].ChildNodes[0].Text;
             ListaProjetos[i].Nome := aux;
+
             aux := NodeListProjetos[i].ChildNodes[1].Text;
             ListaProjetos[i].Cadastro := StrToDateTime(aux);
+
             aux := NodeListProjetos[i].ChildNodes[2].Text;
             ListaProjetos[i].Alteracao := StrToDateTime(aux);
          except
