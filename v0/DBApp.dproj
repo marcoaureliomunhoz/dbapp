@@ -96,6 +96,12 @@
             <Form>FormConfig</Form>
         </DCCReference>
         <DCCReference Include="DBAppConfigArq.pas"/>
+        <DCCReference Include="DBAppBaseArq.pas"/>
+        <DCCReference Include="DBAppProblemas.pas">
+            <Form>FormProblemas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="DBAppProjetosArq.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

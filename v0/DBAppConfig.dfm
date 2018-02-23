@@ -4,7 +4,7 @@ object FormConfig: TFormConfig
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Configura'#231#227'o'
-  ClientHeight = 326
+  ClientHeight = 360
   ClientWidth = 594
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -26,8 +26,6 @@ object FormConfig: TFormConfig
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'TabGeral'
-      ExplicitWidth = 281
-      ExplicitHeight = 160
       object Label1: TLabel
         Left = 15
         Top = 15
@@ -41,7 +39,25 @@ object FormConfig: TFormConfig
         Width = 505
         Height = 26
         TabOrder = 0
+        OnKeyUp = EditDiretorioKeyUp
       end
     end
+  end
+  object PanelStatus: TPanel
+    Left = 24
+    Top = 309
+    Width = 541
+    Height = 35
+    BevelOuter = bvNone
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 1
+    OnClick = PanelStatusClick
   end
 end

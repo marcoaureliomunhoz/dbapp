@@ -14,6 +14,7 @@ object FormPrincipal: TFormPrincipal
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 18
   object Image1: TImage
@@ -950,7 +951,9 @@ object FormPrincipal: TFormPrincipal
     Width = 449
     Height = 113
     ItemHeight = 18
+    PopupMenu = PopupMenuProjetos
     TabOrder = 0
+    OnMouseDown = ListboxProjetosMouseDown
   end
   object BtnNovo: TButton
     Left = 200
@@ -965,6 +968,7 @@ object FormPrincipal: TFormPrincipal
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
+    OnClick = BtnNovoClick
   end
   object BtnConfig: TButton
     Left = 414
@@ -974,5 +978,17 @@ object FormPrincipal: TFormPrincipal
     Caption = 'Config'
     TabOrder = 2
     OnClick = BtnConfigClick
+  end
+  object PopupMenuProjetos: TPopupMenu
+    Left = 368
+    Top = 296
+    object PopupMenuItemAlterarProjeto: TMenuItem
+      Caption = 'Alterar'
+      OnClick = PopupMenuItemAlterarProjetoClick
+    end
+    object PopupMenuItemExcluirProjeto: TMenuItem
+      Caption = 'Excluir'
+      OnClick = PopupMenuItemExcluirProjetoClick
+    end
   end
 end
