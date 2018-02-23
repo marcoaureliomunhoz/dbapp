@@ -1,8 +1,11 @@
 program DBApp;
 
 uses
+  System.SysUtils,
   Vcl.Forms,
-  DBAppPrincipal in 'DBAppPrincipal.pas' {FormPrincipal};
+  DBAppPrincipal in 'DBAppPrincipal.pas' {FormPrincipal},
+  DBAppConfig in 'DBAppConfig.pas' {FormConfig},
+  DBAppConfigArq in 'DBAppConfigArq.pas';
 
 {$R *.res}
 

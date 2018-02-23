@@ -1,4 +1,5 @@
 *.exe
+*.identcache
 
 [Dd]ebug/
 [Ww]in32/

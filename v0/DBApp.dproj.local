@@ -1,10 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2018/02/22 17:23:49.926,=C:\ARQUIVOZ\Base de Conhecimento\Delphi\Projetos\Unit1.pas</Transaction>
-    <Transaction>2018/02/22 17:28:05.810,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBAppPrincipal.pas=C:\ARQUIVOZ\Base de Conhecimento\Delphi\Projetos\Unit1.pas</Transaction>
-    <Transaction>2018/02/22 17:28:05.810,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBAppPrincipal.dfm=C:\ARQUIVOZ\Base de Conhecimento\Delphi\Projetos\Unit1.dfm</Transaction>
-    <Transaction>2018/02/22 17:28:22.655,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBApp.dproj=C:\ARQUIVOZ\Base de Conhecimento\Delphi\Projetos\Project1.dproj</Transaction>
-    <Transaction>2018/02/22 17:37:59.804,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBApp.dproj=C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBApp.dproj</Transaction>
+	<Transactions>
+    <Transaction>2018/02/22 17:23:49.000.926,=C:\ARQUIVOZ\Base de Conhecimento\Delphi\Projetos\Unit1.pas</Transaction>
+    <Transaction>2018/02/22 17:28:05.000.810,C:\ARQUIVOZ\Base de Conhecimento\Delphi\Projetos\Unit1.dfm=C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBAppPrincipal.dfm</Transaction>
+    <Transaction>2018/02/22 17:28:05.000.810,C:\ARQUIVOZ\Base de Conhecimento\Delphi\Projetos\Unit1.pas=C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBAppPrincipal.pas</Transaction>
+    <Transaction>2018/02/22 17:28:22.000.655,C:\ARQUIVOZ\Base de Conhecimento\Delphi\Projetos\Project1.dproj=C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBApp.dproj</Transaction>
+    <Transaction>2018/02/22 17:37:59.000.804,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBApp.dproj=C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBApp.dproj</Transaction>
+    <Transaction>2018/02/22 21:11:26.336,=C:\ARQUIVOZ\Projetos\DBApp\app\v0\Unit1.pas</Transaction>
+    <Transaction>2018/02/22 21:11:43.735,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBAppConfig.dfm=C:\ARQUIVOZ\Projetos\DBApp\app\v0\Unit1.dfm</Transaction>
+    <Transaction>2018/02/22 21:11:43.735,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBAppConfig.pas=C:\ARQUIVOZ\Projetos\DBApp\app\v0\Unit1.pas</Transaction>
+    <Transaction>2018/02/22 21:30:08.140,=C:\ARQUIVOZ\Projetos\DBApp\app\v0\Unit1.pas</Transaction>
+    <Transaction>2018/02/22 21:30:46.019,=C:\ARQUIVOZ\Projetos\DBApp\app\v0\Unit1.pas</Transaction>
+    <Transaction>2018/02/22 21:33:56.119,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBAppAux.pas=C:\ARQUIVOZ\Projetos\DBApp\app\v0\Unit1.pas</Transaction>
+    <Transaction>2018/02/22 21:44:30.126,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBAppAux.pas=</Transaction>
+    <Transaction>2018/02/22 21:50:56.434,=C:\ARQUIVOZ\Projetos\DBApp\app\v0\Unit1.pas</Transaction>
+    <Transaction>2018/02/22 21:53:22.814,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBAppConfigFile.pas=C:\ARQUIVOZ\Projetos\DBApp\app\v0\Unit1.pas</Transaction>
+    <Transaction>2018/02/22 21:55:30.352,C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBAppConfigArq.pas=C:\ARQUIVOZ\Projetos\DBApp\app\v0\DBAppConfigFile.pas</Transaction>
   </Transactions>
 </BorlandProject>

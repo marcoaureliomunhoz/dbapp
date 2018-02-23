@@ -91,8 +91,11 @@
         </DelphiCompile>
         <DCCReference Include="DBAppPrincipal.pas">
             <Form>FormPrincipal</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="DBAppConfig.pas">
+            <Form>FormConfig</Form>
+        </DCCReference>
+        <DCCReference Include="DBAppConfigArq.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
