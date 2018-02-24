@@ -86,6 +86,7 @@ object FormProjeto: TFormProjeto
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 0
+          OnClick = BtnNovaTabelaClick
         end
       end
       object Panel2: TPanel
@@ -96,7 +97,6 @@ object FormProjeto: TFormProjeto
         Align = alBottom
         BevelOuter = bvNone
         TabOrder = 2
-        ExplicitTop = 520
       end
       object Panel3: TPanel
         Left = 0
@@ -106,8 +106,6 @@ object FormProjeto: TFormProjeto
         Align = alLeft
         BevelOuter = bvNone
         TabOrder = 3
-        ExplicitTop = 47
-        ExplicitHeight = 473
       end
       object Panel4: TPanel
         Left = 782
@@ -117,9 +115,6 @@ object FormProjeto: TFormProjeto
         Align = alRight
         BevelOuter = bvNone
         TabOrder = 4
-        ExplicitLeft = 0
-        ExplicitTop = 47
-        ExplicitHeight = 473
       end
     end
     object TabImplantacoes: TTabSheet

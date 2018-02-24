@@ -85,7 +85,9 @@ begin
       Application.CreateForm(TFormProjeto, FormProjeto);
       if FormProjeto.CarregarProjeto(ConfigArq.DiretorioDeProjetos, ListaProjetos[ListboxProjetos.ItemIndex].Nome) then
       begin
+         Self.Left := Self.Left - 9999;
          FormProjeto.ShowModal;
+         Self.Left := Self.Left + 9999;
       end else
       begin
          ShowMessage('Ops!');

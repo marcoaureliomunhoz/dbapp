@@ -10,7 +10,10 @@ uses
   DBAppProblemas in 'DBAppProblemas.pas' {FormProblemas},
   DBAppProjetosArq in 'DBAppProjetosArq.pas',
   DBAppFormProjeto in 'DBAppFormProjeto.pas' {FormProjeto},
-  DBAppProjetoBase in 'DBAppProjetoBase.pas';
+  DBAppProjetoBase in 'DBAppProjetoBase.pas',
+  DBAppFormTabela in 'DBAppFormTabela.pas' {FormTabela},
+  DBAppFormNovaColuna in 'DBAppFormNovaColuna.pas' {FormNovaColuna},
+  DBAppTiposDeDados in 'DBAppTiposDeDados.pas';
 
 {$R *.res}
 

@@ -13,10 +13,12 @@ type
       Cadastro : TDateTime;
       Alteracao : TDateTime
    end;
+
    TDBAppProjetoBase = class(TDBAppBaseArq)
       FDiretorioDeProjetos : String;
       FNome : String;
       FDiretorioBase : String;
+      FListaProblemas : TStringList;
       ListaBase : TArray<TDBAppBaseRec>;
       BaseArqNome : string;
       BaseArqPath : string;
@@ -25,6 +27,9 @@ type
    public
       constructor Create(DiretorioDeProjetos, Nome: String);
       function ListarTabelas: TArray<TDBAppBaseRec>;
+      function RetIndiceTabela(Nome: String): Integer;
+      function TabelaExiste(Nome: String): Boolean;
+      //function AdicionarColuna(Coluna: String; Tabela: String): boolean;
    end;
 
 implementation
@@ -121,6 +126,26 @@ begin
       Lista[i].Alteracao := ListaBase[i].Alteracao;
    end;
    Result := Lista;
+end;
+
+function TDBAppProjetoBase.RetIndiceTabela(Nome: String): Integer;
+var
+   i : Integer;
+begin
+   result := -1;
+   i := 0;
+   while (result = -1) and (i < length(ListaBase)) do
+   begin
+      if (ListaBase[i].Nome = Nome) then
+         result := i
+      else
+         i := i + 1;
+   end;
+end;
+
+function TDBAppProjetoBase.TabelaExiste(Nome: String): Boolean;
+begin
+   result := RetIndiceTabela(Nome) >= 0;
 end;
 
 end.

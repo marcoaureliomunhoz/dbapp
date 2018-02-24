@@ -107,6 +107,15 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="DBAppProjetoBase.pas"/>
+        <DCCReference Include="DBAppFormTabela.pas">
+            <Form>FormTabela</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="DBAppFormNovaColuna.pas">
+            <Form>FormNovaColuna</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="DBAppTiposDeDados.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

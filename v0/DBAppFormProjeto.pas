@@ -23,6 +23,7 @@ type
     Panel3: TPanel;
     Panel4: TPanel;
     BtnNovaTabela: TButton;
+    procedure BtnNovaTabelaClick(Sender: TObject);
   private
     ProjetoBase : TDBAppProjetoBase;
     ListaTabelas : TArray<TDBAppBaseRec>;
@@ -36,6 +37,18 @@ var
 implementation
 
 {$R *.dfm}
+
+uses DBAppFormTabela;
+
+procedure TFormProjeto.BtnNovaTabelaClick(Sender: TObject);
+begin
+   self.Visible := false;
+   Application.CreateForm(TFormTabela, FormTabela);
+   FormTabela.NovaTabela(ProjetoBase);
+   FormTabela.ShowModal;
+   FormTabela.Free;
+   self.Visible := true;
+end;
 
 function TFormProjeto.CarregarProjeto(DiretorioDeProjetos, Nome : string): boolean;
 var
