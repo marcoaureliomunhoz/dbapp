@@ -24,9 +24,12 @@ type
     Panel4: TPanel;
     BtnNovaTabela: TButton;
     procedure BtnNovaTabelaClick(Sender: TObject);
+    procedure DBGridTabelasCellClick(Column: TColumn);
+    procedure FormShow(Sender: TObject);
   private
     ProjetoBase : TDBAppProjetoBase;
     ListaTabelas : TArray<TDBAppBaseRec>;
+    procedure CarregarTabelas;
   public
     function CarregarProjeto(DiretorioDeProjetos, Nome : string): boolean;
   end;
@@ -42,25 +45,29 @@ uses DBAppFormTabela;
 
 procedure TFormProjeto.BtnNovaTabelaClick(Sender: TObject);
 begin
-   self.Visible := false;
+   self.Left := self.Left - 9999;
    Application.CreateForm(TFormTabela, FormTabela);
    FormTabela.NovaTabela(ProjetoBase);
    FormTabela.ShowModal;
    FormTabela.Free;
-   self.Visible := true;
+   self.Left := self.Left + 9999;
+   DBGridTabelas.SetFocus;
+   CarregarTabelas;
 end;
 
-function TFormProjeto.CarregarProjeto(DiretorioDeProjetos, Nome : string): boolean;
+procedure TFormProjeto.CarregarTabelas;
 var
    i : integer;
 begin
-   self.Caption := 'Projeto - ' + Nome;
-   Result := false;
-   ProjetoBase := TDBAppProjetoBase.Create(DiretorioDeProjetos, Nome);
+   if (DataSetTabelas.Active) then
+   begin
+      while (DataSetTabelas.RecordCount > 0) do DataSetTabelas.Delete;
+   end else
+   begin
+      DataSetTabelas.Open;
+   end;
 
-   DataSetTabelas.CreateDataSet;
-   DataSetTabelas.Open;
-
+   SetLength(ListaTabelas,0);
    ListaTabelas := ProjetoBase.ListarTabelas;
    for i := 0 to length(ListaTabelas)-1 do
    begin
@@ -71,8 +78,40 @@ begin
       DataSetTabelas['Alteracao'] := ListaTabelas[i].Alteracao;
       DataSetTabelas.Post;
    end;
+end;
+
+function TFormProjeto.CarregarProjeto(DiretorioDeProjetos, Nome : string): boolean;
+begin
+   self.Caption := 'Projeto - ' + Nome;
+   Result := false;
+   ProjetoBase := TDBAppProjetoBase.Create(DiretorioDeProjetos, Nome);
+
+   DataSetTabelas.CreateDataSet;
+   CarregarTabelas;
+   DataSetTabelas.First;
 
    Result := true;
+end;
+
+procedure TFormProjeto.DBGridTabelasCellClick(Column: TColumn);
+begin
+   if (DataSetTabelas.Active) and (DataSetTabelas.RecordCount > 0) then
+   begin
+      self.Left := self.Left - 9999;
+      Application.CreateForm(TFormTabela, FormTabela);
+      FormTabela.AdministrarTabela(ProjetoBase, DataSetTabelas.FieldByName('Nome').AsString);
+      FormTabela.ShowModal;
+      FormTabela.Free;
+      self.Left := self.Left + 9999;
+   end;
+end;
+
+procedure TFormProjeto.FormShow(Sender: TObject);
+begin
+   if (DataSetTabelas.Active) and (DataSetTabelas.RecordCount > 0) then
+      DBGridTabelas.SetFocus
+   else
+      BtnNovaTabela.SetFocus;
 end;
 
 end.

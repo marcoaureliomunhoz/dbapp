@@ -13,7 +13,9 @@ uses
   DBAppProjetoBase in 'DBAppProjetoBase.pas',
   DBAppFormTabela in 'DBAppFormTabela.pas' {FormTabela},
   DBAppFormNovaColuna in 'DBAppFormNovaColuna.pas' {FormNovaColuna},
-  DBAppTiposDeDados in 'DBAppTiposDeDados.pas';
+  DBAppTiposDeDados in 'DBAppTiposDeDados.pas',
+  DBAppColuna in 'DBAppColuna.pas',
+  DBAppFormAlterarTipoColuna in 'DBAppFormAlterarTipoColuna.pas' {FormAlterarTipoColuna};
 
 {$R *.res}
 

@@ -13,6 +13,7 @@ object FormTabela: TFormTabela
   OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 18
   object PageControlTabela: TPageControl
@@ -34,6 +35,7 @@ object FormTabela: TFormTabela
         Align = alClient
         DataSource = DataSourceColunas
         Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        PopupMenu = PopupMenuColunas
         ReadOnly = True
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
@@ -41,6 +43,7 @@ object FormTabela: TFormTabela
         TitleFont.Height = -15
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        OnCellClick = DBGridColunasCellClick
         Columns = <
           item
             Expanded = False
@@ -67,9 +70,10 @@ object FormTabela: TFormTabela
           item
             Alignment = taCenter
             Expanded = False
-            FieldName = 'Nulo'
+            FieldName = 'Obrigatorio'
             Title.Alignment = taCenter
-            Width = 35
+            Title.Caption = 'Obrigat'#243'ria'
+            Width = 80
             Visible = True
           end
           item
@@ -103,7 +107,7 @@ object FormTabela: TFormTabela
           Top = 10
           Width = 100
           Height = 35
-          Caption = 'Nova'
+          Caption = '&Nova'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -15
@@ -163,7 +167,7 @@ object FormTabela: TFormTabela
       Top = 10
       Width = 100
       Height = 35
-      Caption = 'Salvar'
+      Caption = '&Salvar'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -182,6 +186,7 @@ object FormTabela: TFormTabela
   object DataSetColunas: TClientDataSet
     Aggregates = <>
     Params = <>
+    AfterScroll = DataSetColunasAfterScroll
     Left = 408
     Top = 352
     object DataSetColunasNome: TStringField
@@ -203,9 +208,6 @@ object FormTabela: TFormTabela
       FieldName = 'Tipo'
       Size = 100
     end
-    object DataSetColunasTamanho: TIntegerField
-      FieldName = 'Tamanho'
-    end
     object DataSetColunasValorPadrao: TStringField
       FieldName = 'ValorPadrao'
       Size = 100
@@ -222,9 +224,33 @@ object FormTabela: TFormTabela
       FieldName = 'FK'
       Size = 5
     end
-    object DataSetColunasNulo: TStringField
-      FieldName = 'Nulo'
+    object DataSetColunasObrigatorio: TStringField
+      FieldName = 'Obrigatorio'
       Size = 5
+    end
+    object DataSetColunasTamanho: TStringField
+      FieldName = 'Tamanho'
+    end
+  end
+  object PopupMenuColunas: TPopupMenu
+    Left = 404
+    Top = 412
+    object MenuAlterarTipoColuna: TMenuItem
+      Caption = 'Alterar Tipo'
+      ShortCut = 16449
+      OnClick = MenuAlterarTipoColunaClick
+    end
+    object MenuTornarColunaObrigatoria: TMenuItem
+      Caption = 'Tornar Obrigat'#243'ria'
+      ShortCut = 16463
+    end
+    object MenuTirarObrigatoriedade: TMenuItem
+      Caption = 'Tirar Obrigatoriedade'
+      ShortCut = 16462
+    end
+    object MenuTornarCampoIdentidade: TMenuItem
+      Caption = 'Tornar Identidade'
+      ShortCut = 16457
     end
   end
 end

@@ -12,6 +12,7 @@ object FormProjeto: TFormProjeto
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 18
   object PageControlProjeto: TPageControl
@@ -40,6 +41,7 @@ object FormProjeto: TFormProjeto
         TitleFont.Height = -15
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        OnCellClick = DBGridTabelasCellClick
         Columns = <
           item
             Expanded = False
@@ -78,7 +80,7 @@ object FormProjeto: TFormProjeto
           Top = 10
           Width = 100
           Height = 35
-          Caption = 'Nova'
+          Caption = '&Nova'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -15

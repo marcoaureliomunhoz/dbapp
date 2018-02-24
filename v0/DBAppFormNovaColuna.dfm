@@ -64,29 +64,31 @@ object FormNovaColuna: TFormNovaColuna
     NumbersOnly = True
     TabOrder = 2
   end
-  object CheckBoxPodeNulo: TCheckBox
+  object CheckBoxObrigatorio: TCheckBox
     Left = 15
-    Top = 136
+    Top = 189
     Width = 150
-    Height = 17
-    Caption = 'Pode Nulo'
-    TabOrder = 3
+    Height = 19
+    Caption = 'Obrigat'#243'ria'
+    TabOrder = 5
   end
   object CheckBoxPK: TCheckBox
     Left = 15
     Top = 164
     Width = 150
-    Height = 17
+    Height = 19
     Caption = 'Chave Prim'#225'ria'
     TabOrder = 4
+    OnClick = CheckBoxPKClick
   end
   object CheckBoxID: TCheckBox
     Left = 15
-    Top = 191
+    Top = 139
     Width = 150
-    Height = 17
+    Height = 19
     Caption = 'Identidade'
-    TabOrder = 5
+    TabOrder = 3
+    OnClick = CheckBoxIDClick
   end
   object PanelOpcoesNovaTabela: TPanel
     Left = 0

@@ -14,7 +14,7 @@ type
     ComboBoxTipo: TComboBox;
     EditTamanho: TEdit;
     Label3: TLabel;
-    CheckBoxPodeNulo: TCheckBox;
+    CheckBoxObrigatorio: TCheckBox;
     CheckBoxPK: TCheckBox;
     CheckBoxID: TCheckBox;
     PanelOpcoesNovaTabela: TPanel;
@@ -23,10 +23,13 @@ type
     procedure ComboBoxTipoChange(Sender: TObject);
     procedure BtnSalvarNovaColunaClick(Sender: TObject);
     procedure EditNomeKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure CheckBoxPKClick(Sender: TObject);
+    procedure CheckBoxIDClick(Sender: TObject);
   private
     TiposDeDados : TArray<TDBAppTipoDadoRec>;
   public
     NovaColuna : TDBAppColuna;
+    procedure Alterar(Nome, Tipo, Tamanho: String; Obrigatorio, PK, Identidade: Boolean);
   end;
 
 var
@@ -39,14 +42,17 @@ implementation
 uses DBAppProblemas;
 
 procedure TFormNovaColuna.BtnSalvarNovaColunaClick(Sender: TObject);
-var
-   Tamanho : Integer;
 begin
-   Tamanho := 0;
-   TryStrToInt(EditTamanho.Text, Tamanho);
-
    //fabrica a nova coluna
-   NovaColuna := TDBAppColuna.Create(0, EditNome.Text, ComboBoxTipo.Text, Tamanho, CheckBoxPodeNulo.Checked, CheckBoxPK.Checked, CheckBoxID.Checked);
+   NovaColuna := TDBAppColuna.Create(
+                     0,
+                     EditNome.Text,
+                     ComboBoxTipo.Text,
+                     EditTamanho.Text,
+                     CheckBoxObrigatorio.Checked,
+                     CheckBoxPK.Checked,
+                     CheckBoxID.Checked
+                  );
 
    //se a fabrica retornar problema avisa o usuário
    if (NovaColuna.ListaProblemas.Count > 0) then
@@ -65,6 +71,26 @@ begin
    //se a fabrica não retornar problema fecha a tela
    begin
       Close;
+   end;
+end;
+
+procedure TFormNovaColuna.CheckBoxIDClick(Sender: TObject);
+begin
+   CheckBoxObrigatorio.Enabled := true;
+   if (CheckBoxPK.Checked or CheckBoxID.Checked) then
+   begin
+      CheckBoxObrigatorio.Enabled := false;
+      if (CheckBoxPK.Checked) then CheckBoxObrigatorio.Checked := true;
+   end;
+end;
+
+procedure TFormNovaColuna.CheckBoxPKClick(Sender: TObject);
+begin
+   CheckBoxObrigatorio.Enabled := true;
+   if (CheckBoxPK.Checked or CheckBoxID.Checked) then
+   begin
+      CheckBoxObrigatorio.Enabled := false;
+      if (CheckBoxPK.Checked) then CheckBoxObrigatorio.Checked := true;
    end;
 end;
 
@@ -99,6 +125,20 @@ begin
       ComboBoxTipo.Items.Add(TiposDeDados[i].Tipo);
    end;
    ComboBoxTipo.ItemIndex := -1;
+end;
+
+procedure TFormNovaColuna.Alterar(Nome, Tipo, Tamanho: String; Obrigatorio, PK, Identidade: Boolean);
+begin
+   EditNome.Text := Nome;
+   ComboBoxTipo.ItemIndex := 0;
+   while (TiposDeDados[ComboBoxTipo.ItemIndex].Tipo <> Tipo) do ComboBoxTipo.ItemIndex := ComboBoxTipo.ItemIndex + 1;
+   EditTamanho.Text := Tamanho;
+   EditTamanho.Enabled := Tamanho <> '';
+   CheckBoxObrigatorio.Checked := Obrigatorio;
+   CheckBoxID.Checked := Identidade;
+   CheckBoxID.Enabled := TiposDeDados[ComboBoxTipo.ItemIndex].PermiteIdentidade;
+   CheckBoxPK.Checked := PK;
+   CheckBoxObrigatorio.Enabled := not PK;
 end;
 
 end.

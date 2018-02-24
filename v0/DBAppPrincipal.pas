@@ -24,6 +24,7 @@ type
     procedure ListboxProjetosMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure PopupMenuItemExcluirProjetoClick(Sender: TObject);
     procedure ListboxProjetosClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     ListaProjetos : TArray<TDBAppProjetoRec>;
     ConfigArq : TDBAppConfigArq;
@@ -76,6 +77,19 @@ end;
 procedure TFormPrincipal.FormCreate(Sender: TObject);
 begin
    CarregarProjetos;
+end;
+
+procedure TFormPrincipal.FormShow(Sender: TObject);
+begin
+   if (ListboxProjetos.Count>0) then
+   begin
+      ListboxProjetos.ItemIndex := 0;
+      ListboxProjetos.Selected[0] := true;
+      ListboxProjetos.SetFocus;
+   end else
+   begin
+      BtnNovo.SetFocus;
+   end;
 end;
 
 procedure TFormPrincipal.ListboxProjetosClick(Sender: TObject);

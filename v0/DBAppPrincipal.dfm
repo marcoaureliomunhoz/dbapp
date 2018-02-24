@@ -15,6 +15,7 @@ object FormPrincipal: TFormPrincipal
   OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 18
   object Image1: TImage
@@ -961,7 +962,7 @@ object FormPrincipal: TFormPrincipal
     Top = 416
     Width = 100
     Height = 35
-    Caption = 'Novo'
+    Caption = '&Novo'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
